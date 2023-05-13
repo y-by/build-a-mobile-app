@@ -1,6 +1,11 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
 import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
+// register service worker for PWA
+if('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+}
+
 const appSettings = {
     databaseURL: "https://playground-yny-default-rtdb.europe-west1.firebasedatabase.app/"
 }
@@ -17,7 +22,7 @@ addButtonEl.addEventListener("click", function() {
     let inputValue = inputFieldEl.value
     push(shoppingListInDB, inputValue)
     cleanInputFieldEl()
-    console.log(`${inputValue} add to database`)
+    // console.log(`${inputValue} add to database`)
 })
 
 onValue(shoppingListInDB, function(snapshot) {
@@ -30,7 +35,7 @@ onValue(shoppingListInDB, function(snapshot) {
             const currentItem = shoppingListArray[i];
             let currentItemID = currentItem[0]
             let currentItemValue = currentItem[1]
-            console.log(currentItemID, currentItemValue)
+            // console.log(currentItemID, currentItemValue)
             appendItemToShoppingListEl(currentItem)
         }
     } else {

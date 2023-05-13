@@ -4,8 +4,14 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#4b4b4b">
 
         <title>Add to Cart</title>
+
+        <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon_io/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon_io/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon_io/favicon-16x16.png">
+        <link rel="manifest" href="/cart.webmanifest">
         
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,13 +21,13 @@
     <body>
         <div class="card">
             <img class="cat-image" src="assets/cat.png" alt="cat in a shopping cart" srcset="">
-            <input type="text" id="input-field" placeholder="Bread">
+            <label for="input-field">Add item to market List</label>
+            <input label="main input" type="text" id="input-field" placeholder="write here">
             <button id="add-button">Add to cart</button>
             <ul id="shopping-list">
             </ul>
         </div>
 
-        <script src="functions.js" type="module"></script>
         <script src="index.js" type="module"></script>
     </body>
 </html>
